@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Body as Brush, Gesture as Landscape</title>
+    <meta
+      name="description"
+      content="An XR interactive art project translating Peking Opera gestures into Chinese landscape painting."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>Body as Brush</strong>
+          <small>Gesture as Landscape</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#project">项目</a>
+        <a href="#experience">体验</a>
+        <a href="#research">研究</a>
+        <a href="#team">团队</a>
+        <a href="#future">未来</a>
+      </nav>
+      <button class="language-toggle" type="button" data-lang-toggle aria-label="Switch to English">EN</button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="./assets/xr-stage-landscape.png" alt="XR stage showing Peking Opera performers generating a landscape painting." />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">XR Interactive Art · Peking Opera · Chinese Landscape Painting</p>
+          <h1 id="hero-title">Body as Brush,<br />Gesture as Landscape</h1>
+          <p class="hero-cn">身体为笔，身段成景</p>
+          <p class="hero-copy">
+            一个将京剧程式化身段转译为中国山水画意象的沉浸式交互项目。观众以身体参与创作，在动作捕捉、实时生成与传统美学之间，生成属于自己的山水。
+          </p>
+          <div class="hero-actions" aria-label="Page shortcuts">
+            <a class="button primary" href="#experience">进入体验叙事</a>
+            <a class="button ghost" href="#research">查看研究框架</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="Project summary">
+        <div class="intro-grid">
+          <p>
+            本项目以京剧四大行当“生、旦、净、丑”的经典身段为输入，以中国山水画中的山、水、云、树、鹤等视觉意象为输出，建立“动作-角色-山水意象”的跨媒介映射逻辑。
+          </p>
+          <dl class="facts">
+            <div>
+              <dt>Core Medium</dt>
+              <dd>Motion Capture + XR</dd>
+            </div>
+            <div>
+              <dt>Aesthetic Focus</dt>
+              <dd>Xieyi / Liubai</dd>
+            </div>
+            <div>
+              <dt>Public Experience</dt>
+              <dd>Real-time painting through gesture</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="project" class="section project-section">
+        <div class="section-head">
+          <p class="eyebrow">Current Project</p>
+          <h2>从表演到山水</h2>
+        </div>
+        <div class="split">
+          <div class="text-block">
+            <h3>项目理念</h3>
+            <p>
+              京剧和中国山水画都依赖高度凝练的符号系统。它们不直接复制现实，而是在身段、笔墨、留白与意象之间表达精神状态。项目试图把这种难以被初学者直接理解的审美经验转化为可参与、可反馈、可生成的互动过程。
+            </p>
+            <p>
+              在体验中，观众不再只是观看传统艺术，而是通过模仗京剧身段触发视觉生成。身体成为画笔，动作成为山水，传统美学被转化为一种当代的、可感知的文化交互。
+            </p>
+          </div>
+          <figure class="image-panel">
+            <img src="./assets/movement-role-landscape.png" alt="Diagram mapping Peking Opera movement, role archetype, and landscape imagery." />
+            <figcaption>“动作-角色-山水意象”对应逻辑：从京剧行当特征与身段语义出发，转译为山水画元素。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="experience" class="section warm-section">
+        <div class="section-head">
+          <p class="eyebrow">Interactive Experience</p>
+          <h2>观众如何参与一幅山水的生成</h2>
+          <p>
+            体验路径应尽量清晰，让第一次接触京剧的观众也能理解：选择角色、学习动作、触发意象、共同生成画面。
+          </p>
+        </div>
+        <div class="steps" aria-label="Experience steps">
+          <article>
+            <span>01</span>
+            <h3>选择行当</h3>
+            <p>观众从生、旦、净、丑四类京剧角色中选择一个入口，进入对应的动作与视觉系统。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>学习身段</h3>
+            <p>系统引导观众完成云手、顺风旗、山膀等代表性动作，降低专业表演门槛。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>触发山水</h3>
+            <p>MediaPipe 骨骼识别与 TouchDesigner 实时生成系统将动作转译为山、水、云、树、鹤等图像元素。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>共同成画</h3>
+            <p>不同观众与动作组合逐渐生成一幅独特山水，使传统艺术从观看对象转化为参与过程。</p>
+          </article>
+        </div>
+        <figure class="inline-figure">
+          <img src="./assets/user-interaction.jpg" alt="User interaction pipeline and on-site participation photos." />
+          <figcaption>用户交互流程：动作捕捉、语义映射、实时绘制与现场参与共同构成观众生成山水的路径。</figcaption>
+        </figure>
+      </section>
+
+      <section id="system" class="section system-section">
+        <div class="section-head">
+          <p class="eyebrow">System</p>
+          <h2>从身体数据到水墨意象</h2>
+        </div>
+        <div class="system-grid">
+          <figure class="wide-image">
+            <img src="./assets/interaction-painting.png" alt="Diagram showing movement-based visual element generation in the interactive painting." />
+          </figure>
+          <div class="spec-list">
+            <div>
+              <strong>Capture</strong>
+              <p>摄像头捕捉观众身体动作，骨骼追踪系统提取姿态特征。</p>
+            </div>
+            <div>
+              <strong>Mapping</strong>
+              <p>基于京剧专家访谈与动作语义分析，建立“动作-角色-山水意象”映射。</p>
+            </div>
+            <div>
+              <strong>Generation</strong>
+              <p>在 XR 空间中实时生成水墨视觉元素，让观众看到动作的文化转译结果。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section research-section">
+        <div class="section-head">
+          <p class="eyebrow">Research Framework</p>
+          <h2>传统美学的可视化研究</h2>
+        </div>
+        <div class="research-grid">
+          <article>
+            <h3>写意</h3>
+            <p>关注艺术如何超越具体形似，表达主体精神、情绪与意境。</p>
+          </article>
+          <article>
+            <h3>留白</h3>
+            <p>将空白视为主动生成的诗性空间，而非画面缺失。</p>
+          </article>
+          <article>
+            <h3>身体交互</h3>
+            <p>通过身体参与降低传统符号系统的理解门槛，使观众从被动观看转为主动生成。</p>
+          </article>
+          <article>
+            <h3>文化传播评估</h3>
+            <p>未来可结合问卷、访谈与行为数据，研究观众是否真正理解传统美学概念。</p>
+          </article>
+        </div>
+        <div class="research-figures">
+          <figure>
+            <img src="./assets/peking-opera-role-semantics.png" alt="Peking Opera role movement semantic diagram." />
+            <figcaption>四大行当与代表性动作库。</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/costume-pattern-semantics.png" alt="Peking Opera costume pattern semantic categories." />
+            <figcaption>京剧服饰纹样中的植物、动物、山水与宗教图像语义。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="recognition" class="section recognition-section">
+        <div class="section-head">
+          <p class="eyebrow">Recognition</p>
+          <h2>成果与展演</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <time>2026</time>
+            <h3>Aranya Theater Festival · Technology Section</h3>
+            <p>项目入选阿那亚戏剧节科技单元，并面向超过千名观众进行公开展示与体验反馈收集。</p>
+            <div class="carousel" data-carousel="aranya" aria-label="Aranya Theater Festival photo carousel">
+              <img
+                src="./assets/course-representative.png"
+                alt="Aranya Theater Festival on-site interaction photo"
+                data-carousel-image
+              />
+              <p class="carousel-caption">
+                <span data-carousel-title>阿那亚现场体验</span>
+                <small><span data-carousel-index>1</span> / <span data-carousel-total>6</span> · <span data-carousel-prompt>点击图片查看下一张</span></small>
+              </p>
+            </div>
+          </article>
+          <article>
+            <time>2026</time>
+            <h3>ChinaVis 2026 数据可视化竞赛 · 一等奖作品</h3>
+            <p>
+              项目荣获 ChinaVis 2026 数据可视化竞赛“一等奖作品”。ChinaVis，即中国可视化与可视分析大会，是国内可视化与可视分析领域的重要学术与实践交流平台。
+            </p>
+            <div class="carousel" data-carousel="chinavis" aria-label="ChinaVis 2026 award image carousel">
+              <img
+                src="./assets/chinavis-work-poster.png"
+                alt="Body as Brush, Gesture as Landscape ChinaVis award project poster"
+                data-carousel-image
+              />
+              <p class="carousel-caption">
+                <span data-carousel-title>一等奖作品展示海报</span>
+                <small><span data-carousel-index>1</span> / <span data-carousel-total>2</span> · <span data-carousel-prompt>点击图片查看下一张</span></small>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="team" class="section team-section">
+        <div class="section-head">
+          <p class="eyebrow">Team</p>
+          <h2>路人工坊</h2>
+          <p>
+            “每一个路过的人，都可以来玩两下。”
+          </p>
+        </div>
+        <div class="team-intro">
+          <div>
+            <h3>跨界的艺术科技团队</h3>
+            <p>
+              路人工坊，由香港岭南大学徐娴教授领衔，成员共 4 人，均为中央戏剧学院硕士研究生。我们是一支跨界的艺术科技团队，致力于打破“专业技能”与“日常感知”之间的围墙，通过文化转译的形式，探索跨文化跨领域融合的可能性。
+            </p>
+            <p>
+              在我们的创作中，京剧不是高文化门槛的艺术，绘画不是艺术馆的静物，科技不是冰冷的代码。我们将三者融合为可触摸、可进入、可被文化感知的装置现场-每个“路人”，都可以随时走进来，在交互中完成一次艺术的对话。我们不要求观众懂戏剧，不需要会操作设备，甚至不需要“准备好参与”。只要你路过，作品就在等你。
+            </p>
+          </div>
+        </div>
+        <div class="member-grid">
+          <article class="member-card">
+            <img src="./assets/xu-xian.png" alt="徐娴 portrait" />
+            <div>
+              <h3>徐娴</h3>
+              <p class="role">香港岭南大学助理教授、博士生导师</p>
+              <p>香港科技大学博士毕业；中央戏剧学院硕士研究生毕业；牛津、剑桥大学访问学者；ACM CHI、ACM CSCW 等主要国际会议副主席。</p>
+              <p>研究领域：艺术科技、数据可视化、人机交互、人工智能电影等。</p>
+              <p class="profile-link">
+                <a href="https://xxuxian.github.io/" target="_blank" rel="noopener noreferrer">个人主页：xxuxian.github.io</a>
+              </p>
+              <ul>
+                <li>在 ACM CHI、ACM SIGGRAPH、ACM Multimedia、IEEE VIS 和 IEEE VR 等顶级期刊发表了数十篇艺术科技领域论文。</li>
+                <li>创作艺术作品在 ACM SIGGRAPH、ICRA 艺术项目和亚洲数字艺术节上展出。</li>
+                <li>设计研发基于 VR 的教育项目和论文获 IEEE VR 2025 最佳论文荣誉奖。</li>
+                <li>首届香港科技大学人工智能电影节联合发起人。</li>
+                <li>电视剧《你和我的倾城时光》--东方卫视和浙江卫视全国最高收视率的电视剧编剧。</li>
+              </ul>
+            </div>
+          </article>
+          <article class="member-card">
+            <img src="./assets/ji-tiange.png" alt="纪添歌 portrait" />
+            <div>
+              <h3>纪添歌</h3>
+              <p class="role">香港岭南大学博士在读；中央戏剧学院硕士研究生毕业</p>
+              <p>研究领域：艺术科技、情感可视化、戏剧教育。</p>
+              <ul>
+                <li>《脑电波艺术与情绪交互装置》展出于香港演艺学院赛马会剧场，担任导演、演员。</li>
+                <li>阿那亚戏剧节候鸟 300：《Mr.B》制作人、演员。</li>
+                <li>乌镇杯戏剧新生活大赛：《只因为，爱》导演、编剧。</li>
+                <li>爱奇艺漫改舞台剧一等奖、最佳作品：《黑执事》导演。</li>
+                <li>乡村戏剧节：《我们》导演、演员。</li>
+                <li>中央戏剧学院第一届青年戏剧节：多幕剧《猫的天空》演员。</li>
+                <li>第三届全国中小学戏剧展演优秀作品表演奖等。</li>
+                <li>2023 年入选国家艺术基金培训项目----大湾区创意艺术管理和领导人才培训。</li>
+                <li>中国东方演艺集团“高参小”项目科研课题组项目成员。</li>
+                <li>《从悲剧的卡塔西斯角度谈人类情感反映》发表于《戏剧之家》等。</li>
+              </ul>
+            </div>
+          </article>
+          <article class="member-card">
+            <img src="./assets/wang-zhaolong.png" alt="王兆龙 portrait" />
+            <div>
+              <h3>王兆龙</h3>
+              <p class="role">中央戏剧学院硕士</p>
+              <ul>
+                <li>VR 叙事体验作品《Love That Defies Mortality》（改编自昆曲《牡丹亭》）收录于 ACM SIGGRAPH 2025（国际计算机协会图形学与人机交互领域顶会），并在第四届东亚古籍数字人文国际论坛中获得“最佳古意新诠”奖。</li>
+                <li>襄阳市管家巷大型实景演艺幻城舞台影像设计。</li>
+                <li>AI 影像作品《记忆风谷》入围第十八届中央戏剧学院学生影像展竞赛单元。</li>
+                <li>海报作品《惊蛰春耕图》发表于《光明日报》。</li>
+                <li>传统戏剧当代传承中心京剧《虹霓关》《生死恨》摄影指导。</li>
+                <li>话剧《东边坡上的今夜酒与明月诗》剧照摄影。</li>
+                <li>互动影游 / 腾讯短剧《反转 21 克》，电视剧《都挺好》《欢乐颂》《相逢时节》《亲爱的生命》《亲爱的你在哪里》，网剧《乐游原》等剪辑师。</li>
+              </ul>
+            </div>
+          </article>
+          <article class="member-card">
+            <img src="./assets/shi-yi.png" alt="史仪 portrait" />
+            <div>
+              <h3>史仪</h3>
+              <p class="role">中央戏剧学院硕士</p>
+              <ul>
+                <li>交互舞剧作品《Thunderstorm（雷雨）》（收录于 CHI 2026 国际人机交互领域顶会）。</li>
+                <li>VR 叙事体验作品《Nora》（收录于 SIGGRAPH ASIA 2025 国际计算机协会图形学与人机交互领域顶会）。</li>
+                <li>音乐剧《到延安三千里》主创，数字技术。</li>
+                <li>数字戏剧《梦·蝶》主创，数字技术。</li>
+                <li>海报作品《春之序幕》《江畔独步寻花》发表于《光明日报》纸媒。</li>
+                <li>京剧《虹霓关》《生死恨》海报设计。</li>
+                <li>偶剧《我不是达芬奇》《新骑鹅旅行记》多媒体设计、海报设计。</li>
+                <li>中央戏剧学院在研院级学生项目《京剧动作捕捉数据的语义化建构及应用研究》。</li>
+                <li>参与国家重点研发计划“文化科技与现代服务业”专项项目课题“孪生数字人标准体系与伦理规范”，参与撰写《中国数字人产业报告》。</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="future" class="section future-section">
+        <div class="future-layout">
+          <div>
+            <p class="eyebrow">Research Outlook</p>
+            <h2>未来研究</h2>
+          </div>
+          <ul class="future-list">
+            <li>从单一姿态识别发展到连续动作语法识别</li>
+            <li>建立京剧动作语义库与山水意象数据库</li>
+            <li>研究无专业背景观众对写意与留白的理解变化</li>
+            <li>持续扩展为工作坊、展演、教学与研究合作平台</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Body as Brush, Gesture as Landscape</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
