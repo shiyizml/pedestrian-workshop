@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Body as Brush, Gesture as Landscape",
+  title: "Pedestrian Workshop",
   description:
     "A bilingual XR interactive art project translating Peking Opera gestures into Chinese landscape painting.",
 };
