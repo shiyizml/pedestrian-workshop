@@ -462,6 +462,30 @@ const carouselSets = {
       },
       alt: "ChinaVis 2026 conference website screenshot.",
     },
+    {
+      src: "./assets/chinavis-2026-on-site-poster.jpg",
+      title: {
+        zh: "ChinaVis 2026现场",
+        en: "ChinaVis 2026 On Site",
+      },
+      alt: "The Body as Brush, Gesture as Landscape team with their ChinaVis 2026 project poster.",
+    },
+    {
+      src: "./assets/chinavis-2026-on-site-presentation.jpg",
+      title: {
+        zh: "ChinaVis 2026现场",
+        en: "ChinaVis 2026 On Site",
+      },
+      alt: "Body as Brush, Gesture as Landscape presented at ChinaVis 2026.",
+    },
+    {
+      src: "./assets/chinavis-2026-on-site-award.jpg",
+      title: {
+        zh: "ChinaVis 2026现场",
+        en: "ChinaVis 2026 On Site",
+      },
+      alt: "The team receiving recognition at ChinaVis 2026.",
+    },
   ],
 };
 
