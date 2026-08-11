@@ -10,7 +10,7 @@ window.addEventListener("scroll", syncHeader, { passive: true });
 
 const copy = {
   zh: {
-    pageTitle: "Body as Brush, Gesture as Landscape",
+    pageTitle: "Pedestrian Workshop",
     navProject: "项目",
     navExperience: "体验",
     navResearch: "研究",
@@ -133,7 +133,7 @@ const copy = {
     futureLi4: "持续扩展为工作坊、展演、教学与研究合作平台",
   },
   en: {
-    pageTitle: "Body as Brush, Gesture as Landscape",
+    pageTitle: "Pedestrian Workshop",
     navProject: "Project",
     navExperience: "Experience",
     navResearch: "Research",
