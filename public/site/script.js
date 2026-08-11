@@ -455,15 +455,7 @@ const carouselSets = {
       alt: "Body as Brush, Gesture as Landscape ChinaVis award project poster.",
     },
     {
-      src: "./assets/chinavis-2026-site.png",
-      title: {
-        zh: "ChinaVis 2026 大会页面",
-        en: "ChinaVis 2026 Conference Page",
-      },
-      alt: "ChinaVis 2026 conference website screenshot.",
-    },
-    {
-      src: "./assets/chinavis-2026-on-site-poster.jpg",
+      src: "./assets/chinavis-2026-on-site-poster-web.jpg",
       title: {
         zh: "ChinaVis 2026现场",
         en: "ChinaVis 2026 On Site",
@@ -471,7 +463,7 @@ const carouselSets = {
       alt: "The Body as Brush, Gesture as Landscape team with their ChinaVis 2026 project poster.",
     },
     {
-      src: "./assets/chinavis-2026-on-site-presentation.jpg",
+      src: "./assets/chinavis-2026-on-site-presentation-web.jpg",
       title: {
         zh: "ChinaVis 2026现场",
         en: "ChinaVis 2026 On Site",
@@ -479,7 +471,7 @@ const carouselSets = {
       alt: "Body as Brush, Gesture as Landscape presented at ChinaVis 2026.",
     },
     {
-      src: "./assets/chinavis-2026-on-site-award.jpg",
+      src: "./assets/chinavis-2026-on-site-award-web.jpg",
       title: {
         zh: "ChinaVis 2026现场",
         en: "ChinaVis 2026 On Site",
@@ -498,9 +490,25 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const title = carousel.querySelector("[data-carousel-title]");
   const number = carousel.querySelector("[data-carousel-index]");
   const total = carousel.querySelector("[data-carousel-total]");
+  let renderToken = 0;
+
+  function preload(nextIndex) {
+    const nextItem = items[nextIndex];
+    if (!nextItem) return;
+
+    const preloadedImage = new Image();
+    preloadedImage.decoding = "async";
+    preloadedImage.src = nextItem.src;
+  }
 
   function render() {
     const item = items[index];
+    const token = ++renderToken;
+
+    image.classList.add("is-loading");
+    image.onload = image.onerror = () => {
+      if (token === renderToken) image.classList.remove("is-loading");
+    };
     image.src = item.src;
     image.alt = item.alt;
     title.textContent = item.title[currentLanguage];
@@ -509,6 +517,8 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     if (total) {
       total.textContent = String(items.length);
     }
+
+    preload((index + 1) % items.length);
   }
 
   carousel.addEventListener("click", () => {
