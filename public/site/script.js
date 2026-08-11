@@ -1,5 +1,10 @@
 const header = document.querySelector("[data-header]");
 const languageToggle = document.querySelector("[data-lang-toggle]");
+const assetVersion = "20260812-2";
+
+function versionedAsset(src) {
+  return `${src}?v=${assetVersion}`;
+}
 
 function syncHeader() {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -498,7 +503,7 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 
     const preloadedImage = new Image();
     preloadedImage.decoding = "async";
-    preloadedImage.src = nextItem.src;
+    preloadedImage.src = versionedAsset(nextItem.src);
   }
 
   function render() {
@@ -509,7 +514,7 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     image.onload = image.onerror = () => {
       if (token === renderToken) image.classList.remove("is-loading");
     };
-    image.src = item.src;
+    image.src = versionedAsset(item.src);
     image.alt = item.alt;
     title.textContent = item.title[currentLanguage];
     number.textContent = String(index + 1);
