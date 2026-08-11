@@ -586,6 +586,11 @@ figcaption {
   height: clamp(360px, 62vh, 780px);
   object-fit: contain;
   background: #f6f2ec;
+  transition: opacity 180ms ease;
+}
+
+.carousel img.is-loading {
+  opacity: 0.45;
 }
 
 .carousel-caption {
